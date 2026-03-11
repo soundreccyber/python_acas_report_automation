@@ -138,7 +138,7 @@ def download_report_result(session, headers, report_id, report_name, ext):
 
     safe_name = "".join(c for c in report_name if c not in r'\/:*?"<>|').strip()
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"{safe_name}_{timestamp}.{ext}"
+    filename = f"{timestamp}_{safe_name}.{ext}"
     path = os.path.join(output_dir, filename)
 
     write_log(f"Downloading report {report_id} as {filename}")
